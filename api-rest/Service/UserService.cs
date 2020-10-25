@@ -9,22 +9,22 @@ namespace api_rest.User
     {
         public bool add(UserDto dto)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public bool delete(int id)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
         public List<object> get(string input)
         {
-            throw new NotImplementedException();
+            return new List<object> { };
         }
 
         public bool set(UserDto dto)
         {
-            throw new NotImplementedException();
+            return true;
         }
     }
 }
