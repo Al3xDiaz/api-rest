@@ -11,7 +11,7 @@
     
      steps:
        - checkout
-       - run: cd ./api-rest
+       - run: cd .././api-rest
        - run: docker build . -t artefacto
           
       
