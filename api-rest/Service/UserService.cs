@@ -17,9 +17,9 @@ namespace api_rest.User
             return true;
         }
 
-        public List<object> get(string input)
+        public List<UserDto> get(string input)
         {
-            return new List<object> { };
+            return new List<UserDto> { };
         }
 
         public bool set(UserDto dto)
