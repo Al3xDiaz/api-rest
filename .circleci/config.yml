@@ -1,8 +1,18 @@
-machine:
-  services:
-    -docker
-dependencies:
-  override:
-    -docker build -t artefacto
+ version: 2.1
+
+ orbs:
+  win: circleci/windows@2.2.0
+  machine:
+    services:
+      -docker
+ jobs:
+   build:
+     executor: win/default     
     
+     steps:
+       - checkout
+       - run: docker build -t artefacto
+          
+      
+      
 
