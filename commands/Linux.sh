@@ -1,4 +1,4 @@
-ssh -i "$apirest" ubuntu@ec2-54-191-24-157.us-west-2.compute.amazonaws.com
+
 docker build -t api-content .  
 docker run -d -p 80:80 \
 -e auth0_apiidentifier="$Auth0_ApiIdentifier" \
