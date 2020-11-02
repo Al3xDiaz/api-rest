@@ -1,0 +1,13 @@
+machine:
+    -node:
+        version: 12.18.3
+    -services:
+        -docker
+dependecies:
+    override:
+        -docker build --tag api .
+depoyment:
+    prod:
+        branch: main
+        commands:
+            -sh commands/Linux.sh
