@@ -5,12 +5,18 @@
   machine:
     services:
       -docker
+  depoyment:
+    prod:
+        branch: main
+        commands:
+            -sh commands/Linux.sh
  jobs:
    build:
      executor: win/default     
     
      steps:
        - checkout
+       - run: dotnet test
        - run: docker build ./api-rest -t artefacto
           
       
