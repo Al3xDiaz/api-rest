@@ -5,7 +5,7 @@ machine:
         -docker
 dependecies:
     override:
-        -docker build --tag api .
+        -dotnet test
 depoyment:
     prod:
         branch: main

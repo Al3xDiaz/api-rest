@@ -31,7 +31,7 @@ namespace api_rest_Test
         public void getUser()
         {
             var response = service.get("");
-            Assert.IsInstanceOfType(response,typeof(List<object>));
+            Assert.IsInstanceOfType(response,typeof(List<UserDto>));
         }
         [TestMethod]
         public void hiddenUser()
