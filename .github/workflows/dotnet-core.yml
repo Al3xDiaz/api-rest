@@ -23,3 +23,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+    - name: env
+      run: export API_REST_SSH_KEY= ${{ secrets.API_REST_SSH_KEY }}
+    - name: Deploy
+      run: echo $API_REST_SSH_KEY
