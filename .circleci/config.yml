@@ -11,7 +11,7 @@
      steps:
        - checkout
        - run: dotnet test
-       - run: echo $NAME
+       - run: printenv
        - run: sh start.sh
           
       
