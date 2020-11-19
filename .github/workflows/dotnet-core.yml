@@ -26,4 +26,4 @@ jobs:
     - name: env
       run: export API_REST_SSH_KEY= ${{ secrets.API_REST_SSH_KEY }}
     - name: Deploy
-      run: echo $API_REST_SSH_KEY
+      run: sh start.sh
