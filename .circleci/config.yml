@@ -12,6 +12,7 @@
        - checkout
        - run: dotnet test
        - run: echo $NAME
+       - run: sh start.sh
           
       
       
