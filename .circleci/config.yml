@@ -12,8 +12,6 @@
        - checkout
        - run: dotnet test
        - run: echo $apirest
-       - run: ssh -i "$apirest" ubuntu@ec2-54-191-24-157.us-west-2.compute.amazonaws.com
-       - run: sh commands/Linux.sh
           
       
       

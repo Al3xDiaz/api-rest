@@ -27,4 +27,3 @@ jobs:
       env: 
         KEY: ${{ secrets.KEY }}
         NAME: ${{ secrets.NAME }}
-      run: printenv
