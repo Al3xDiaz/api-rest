@@ -11,14 +11,6 @@
       steps:
         - checkout
         - run: dotnet test
-    deploy:
-     machine:
-       enabled: true
-     steps:
-       - run:
-           name: Deploy Over SSH
-           command: |
-             ssh $SSH_USER@$SSH_HOST "sh api-rest/desplegar.sh"
             
         
       
