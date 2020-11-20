@@ -24,7 +24,4 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: Deploy
-      env: 
-        KEY: ${{ secrets.KEY }}
-        NAME: ${{ secrets.NAME }}
-      run: printenv NAME
+      run: sh start.sh
