@@ -24,7 +24,7 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: testsecrets
-      run: echo ${{ secrets.USER }}
+      run: echo ${{ secrets.USER }}+lolis
     - name: setpublickey
       run: echo "{{ secrets.USER }}"> key
     - name: Deploy
