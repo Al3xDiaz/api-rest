@@ -18,21 +18,21 @@ jobs:
         key: ${{ secrets.key }}
         USER: ${{ secrets.USER }}
         HOST: ${{ secrets.HOST }}
+      run: |
+        example-command "$SUPER_SECRET"
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.301
-    #- name: Install dependencies
-     # run: dotnet restore
-   # - name: Build
-     # run: dotnet build --configuration Release --no-restore
-    #- name: Test
-      #run: dotnet test --no-restore --verbosity normal
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+    - name: Test
+      run: dotnet test --no-restore --verbosity normal
     - name: testsecrets
       run: echo $USER
-    #- name: setpublickey
-      #run: echo ""> key
-    #- name: print
-      #run: cat key
-    #- name: Deploy
-      #run: ssh -i "key" -o StrictHostKeyChecking=yes ${{ secrets.USER }}@ "sh api-rest/desplegar.sh"
+    - name: setpublickey
+      run: echo -e $key> key
+    - name: Deploy
+      run: ssh -i "key" -o StrictHostKeyChecking=yes $USER@$HOST "sh api-rest/desplegar.sh"
