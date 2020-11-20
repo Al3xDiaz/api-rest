@@ -9,11 +9,10 @@
     
      steps:
        - checkout
+       - run: dotnet restore
        - run: dotnet build
        - run: dotnet test
        - add_ssh_keys:
           fingerprints:
             - "SO:ME:FIN:G:ER:PR:IN:T"
-       - run: cat .ssh/id_rsa
-       - run: cat .ssh/id_rsa.pub
-       - run: ssh ubuntu@ec2-54-236-33-206.compute-1.amazonaws.com "sh api-rest/desplegar.sh"
+       - run: ssh -i "key" ubuntu@ec2-54-236-33-206.compute-1.amazonaws.com "sh api-rest/desplegar.sh"
