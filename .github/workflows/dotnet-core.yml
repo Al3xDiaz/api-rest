@@ -17,15 +17,17 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.301
-    - name: Install dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
+    #- name: Install dependencies
+     # run: dotnet restore
+   # - name: Build
+     # run: dotnet build --configuration Release --no-restore
+    #- name: Test
+      #run: dotnet test --no-restore --verbosity normal
     - name: testsecrets
       run: echo "${{ secrets.USER }}+lolis"
     - name: setpublickey
       run: echo "{{ secrets.USER }}"> key
-    - name: Deploy
-      run: ssh -i "key" -o StrictHostKeyChecking=yes ${{ secrets.USER }}@${{ secrets.HOST }} "sh api-rest/desplegar.sh"
+    - name: print
+      run: cat key
+    #- name: Deploy
+      #run: ssh -i "key" -o StrictHostKeyChecking=yes ${{ secrets.USER }}@${{ secrets.HOST }} "sh api-rest/desplegar.sh"
