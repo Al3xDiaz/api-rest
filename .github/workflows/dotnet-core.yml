@@ -13,6 +13,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Hello world action
+      env: # Or as an environment variable
+        key: ${{ secrets.key }}
+        USER: ${{ secrets.USER }}
+        HOST: ${{ secrets.HOST }}
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
@@ -24,10 +29,10 @@ jobs:
     #- name: Test
       #run: dotnet test --no-restore --verbosity normal
     - name: testsecrets
-      run: echo "${{ secrets.USER }}+lolis"
-    - name: setpublickey
-      run: echo "{{ secrets.USER }}"> key
-    - name: print
-      run: cat key
+      run: echo $USER
+    #- name: setpublickey
+      #run: echo ""> key
+    #- name: print
+      #run: cat key
     #- name: Deploy
-      #run: ssh -i "key" -o StrictHostKeyChecking=yes ${{ secrets.USER }}@${{ secrets.HOST }} "sh api-rest/desplegar.sh"
+      #run: ssh -i "key" -o StrictHostKeyChecking=yes ${{ secrets.USER }}@ "sh api-rest/desplegar.sh"
