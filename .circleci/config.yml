@@ -19,17 +19,6 @@
            name: Deploy Over SSH
            command: |
              ssh $SSH_USER@$SSH_HOST "sh api-rest/desplegar.sh"
-    workflows:
-    version: 2
-    build-and-deploy:
-      jobs:
-        - build
-        - deploy:
-            requires:
-              - build # only deploy once build job has completed
-            filters:
-              branches:
-                only: master # only deploy on the master branch
             
         
       
