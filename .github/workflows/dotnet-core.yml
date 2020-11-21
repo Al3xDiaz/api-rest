@@ -23,7 +23,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
-    - name: set environment var
+    - name: Deploy
       env: # Or as an environment variable
         key: ${{ secrets.DEPLOY_KEY }}
         DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
