@@ -16,7 +16,7 @@ jobs:
     - name: Hello world action
       env: # Or as an environment variable
         key: ${{ secrets.DEPLOY_KEY }}
-        DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+        DEPLOY_USER: "hola"
         DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
       run: |
         echo $DEPLOY_USER
