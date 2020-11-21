@@ -16,4 +16,3 @@
           fingerprints:
             - "SO:ME:FIN:G:ER:PR:IN:T"
        - run: echo -e $key > key
-       - run: ssh -i "key" -o StrictHostKeyChecking=yes ubuntu@ec2-54-236-33-206.compute-1.amazonaws.com "sh api-rest/desplegar.sh"

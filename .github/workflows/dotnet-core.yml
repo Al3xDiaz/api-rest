@@ -13,13 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Hello world action
-      env: # Or as an environment variable
-        key: ${{ secrets.DEPLOY_KEY }}
-        DEPLOY_USER: "ubuntu"
-        DEPLOY_HOST: ec2-54-236-33-206.compute-1.amazonaws.com
-      run: |
-        echo $DEPLOY_USER
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
@@ -30,9 +23,10 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
-    - name: testsecrets
-      run: echo  ${{ secrets.DEPLOY_USER }}
-    - name: setpublickey
-      run: echo -e $key> key
-    - name: Deploy
-      run: ssh -i "key" -o StrictHostKeyChecking=yes $DEPLOY_USER@$DEPLOY_HOST "sh api-rest/desplegar.sh"
+    - name: set environment var
+      env: # Or as an environment variable
+        key: ${{ secrets.DEPLOY_KEY }}
+        DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+        DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+      run: |
+        sh start.sh
