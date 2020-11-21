@@ -15,9 +15,9 @@ jobs:
     - uses: actions/checkout@v2
     - name: Hello world action
       env: # Or as an environment variable
-        key: ${{ secrets.DEPLOY_KEY }}
-        DEPLOY_USER: "hola"
-        DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+        key: "${{ secrets.DEPLOY_KEY }}"
+        DEPLOY_USER: "${{ secrets.DEPLOY_USER }}"
+        DEPLOY_HOST: "${{ secrets.DEPLOY_HOST }}"
       run: |
         echo $DEPLOY_USER
     - name: Setup .NET Core
@@ -31,7 +31,7 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: testsecrets
-      run: echo  ${{ secrets.DEPLOY_USER }}
+      run: echo  "${{ secrets.DEPLOY_USER }}"
     - name: setpublickey
       run: echo -e $key> key
     - name: Deploy
