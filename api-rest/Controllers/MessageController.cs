@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace api_rest.Controllers
 {
@@ -12,9 +7,9 @@ namespace api_rest.Controllers
     public class MessageController : ControllerBase
     {
         [HttpGet]
-        public IActionResult getTest()
+        public string getTest()
         {
-            return Ok("i lava you!!!");
+            return "i lava you!!!";
         }
     }
 }
