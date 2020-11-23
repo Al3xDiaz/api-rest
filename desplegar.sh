@@ -6,3 +6,4 @@ echo $containerID
 sudo docker stop $containerID
 sudo docker rm $containerID
 sudo docker run -d -p 80:80 api-content
+sudo docker system prune -a --force
