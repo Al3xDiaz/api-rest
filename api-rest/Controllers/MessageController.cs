@@ -6,10 +6,10 @@ namespace api_rest.Controllers
     [ApiController]
     public class MessageController : ControllerBase
     {
-        [HttpGet]
-        public string getTest()
+        [HttpGet("{name}")]
+        public string getTest(string name)
         {
-            return "i lava you!!!, my kuroneko :3";
+            return $"i lava you!!!, my kuroneko :3, te adoro {name}";
         }
     }
 }
