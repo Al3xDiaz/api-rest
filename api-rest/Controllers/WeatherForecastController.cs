@@ -34,10 +34,6 @@ namespace api_rest.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]+" done!!"
             })
             .ToArray();
-        }
-        [HttpGet("test")]
-        public string getTest(){
-            return "i lava you!!!";
-        }
+        }        
     }
 }
