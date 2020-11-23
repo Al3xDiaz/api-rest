@@ -1,5 +1,5 @@
 sudo su
-cd api-rest/api-rest/
+cd /home/$SUDO_USER/api-rest/api-rest
 docker build -t api-content .
 containerID=$(docker container ls | grep "0.0.0.0:5000" | awk '{print $1}')
 echo $containerID
