@@ -9,7 +9,7 @@ namespace api_rest.Controllers
         [HttpGet("{name}")]
         public string getTest(string name)
         {
-            return $"hello {name}, te amooooo!!! welcome test ;)";
+            return $"<h1>hello {name}, te amooooo!!! welcome test ;)</h1>";
         }
     }
 }
