@@ -1,5 +1,5 @@
 cd api-rest/
-sudo git pull
+sudo  git checkout origin/main
 cd api-rest/
 sudo docker rmi $(sudo docker images -a -q)
 sudo docker build -t api-content .
