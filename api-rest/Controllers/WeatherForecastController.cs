@@ -37,7 +37,7 @@ namespace api_rest.Controllers
         }
         [HttpGet("test")]
         public string getTest(){
-            return "Done!!!";
+            return "i lava you!!!";
         }
     }
 }
