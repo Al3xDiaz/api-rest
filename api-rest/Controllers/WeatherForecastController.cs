@@ -35,5 +35,9 @@ namespace api_rest.Controllers
             })
             .ToArray();
         }
+        [HttpGet("test")]
+        public string getTest(){
+            return "Done!!!";
+        }
     }
 }
