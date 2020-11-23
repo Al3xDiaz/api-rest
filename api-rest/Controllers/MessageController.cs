@@ -9,7 +9,7 @@ namespace api_rest.Controllers
         [HttpGet]
         public string getTest()
         {
-            return "i lava you!!!";
+            return "i lava you!!!, my kuroneko";
         }
     }
 }
