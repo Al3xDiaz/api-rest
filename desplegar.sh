@@ -1,4 +1,3 @@
-cd ~/api-rest/
 sudo git checkout .
 sudo git pull
 cd ~/api-rest/api-rest/
