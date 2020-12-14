@@ -19,14 +19,20 @@ jobs:
         dotnet-version: 3.1.301
     - name: Install dependencies
       run: dotnet restore
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+    - name: build
+      env: # Or as an environment variable
+        DOCKER_USER: ${{ secrets.DOCKER_USER}}
+        DOCKER_PASS: ${{secrets.DOCKER_PASS}}
+      run: |
+        sh api-rest/build.sh
     - name: Deploy
       env: # Or as an environment variable
         key: ${{ secrets.DEPLOY_KEY }}
         DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
         DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+        DOCKER_USER: ${{ secrets.DOCKER_USER}}
+        DOCKER_PASS: ${{secrets.DOCKER_PASS}}
       run: |
-        sh start.sh
+        sh api-rest/deploy.sh

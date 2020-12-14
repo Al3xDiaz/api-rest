@@ -25,6 +25,17 @@ namespace api_rest
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc()
+             .AddJsonOptions(options =>
+             {
+                 options.JsonSerializerOptions.IgnoreNullValues = true;
+             });
+            services.AddCors(options =>
+               options.AddPolicy("AllowAllOrigins",
+                   builder =>
+                   {
+                       builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                   }));
             services.AddControllers();
         }
 
@@ -35,7 +46,7 @@ namespace api_rest
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors("AllowAllOrigins");
             app.UseHttpsRedirection();
 
             app.UseRouting();
